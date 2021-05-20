@@ -48,24 +48,25 @@ function App() {
     { label: "Humidity", key: "field2" },
     { label: "Pressure", key: "field3" },
     { label: "Soil Moisture", key: "field4" },
-    { label: "UV", key: "field5" },
+    { label: "UV Index", key: "field5" },
    
   ];
-  if (data1) {
+  
   for (let i=0;i<channelDataLastEntryID1;i++) {
     csvList1.push(data1.feeds[i])
-  }
+ 
 }
-if (data2) {
+console.log(csvList1)
+
   for (let j=0;j<channelDataLastEntryID2;j++) {
     csvList2.push(data2.feeds[j])
   }
-}
-if (dataAgg) {
+
+
   for (let k=0;k<channelDataLastEntryIDAgg;k++) {
     csvListAgg.push(dataAgg.feeds[k])
   }
-}
+
 
   const csvReport1 = {
     data: csvList1,
@@ -82,6 +83,7 @@ if (dataAgg) {
     headers: headers,
     filename: 'MWSAggregate.csv'
   };
+
   return (
     <div className="App">
       <h1>Micro Weather Station</h1>
