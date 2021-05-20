@@ -48,6 +48,7 @@ function App() {
     { label: "Humidity", key: "field2" },
     { label: "Pressure", key: "field3" },
     { label: "Soil Moisture", key: "field4" },
+    { label: "UV", key: "field5" },
    
   ];
   if (data1) {
