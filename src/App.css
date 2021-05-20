@@ -13,7 +13,7 @@ body {
 }
 
 .App {
-   
+  flex: 1;
   justify-content: space-evenly;
   padding: 30px;
 }
@@ -31,6 +31,17 @@ body {
   font-weight: 500;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.data {
+.data1 {
   font-size: large;
+  margin-bottom: 1em;
+  
+}
+.data2 {
+  font-size: large;
+  margin-bottom: 1em;
+  
+}
+.dataAgg {
+  font-size: large;
+  
 }

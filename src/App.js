@@ -85,9 +85,13 @@ if (dataAgg) {
     <div className="App">
       <h1>Micro Weather Station</h1>
       <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
-      <div className="data">
-      <CSVLink {...csvReport1}>Download Node 1</CSVLink><br />
-      <CSVLink {...csvReport2}>Download Node 2</CSVLink><br />
+      <div className="data1">
+      <CSVLink {...csvReport1}>Download Node 1</CSVLink>
+      </div>
+      <div className="data2">
+      <CSVLink {...csvReport2}>Download Node 2</CSVLink>
+      </div>
+      <div className="dataAgg">
       <CSVLink {...csvReportAgg}>Download Aggregate</CSVLink>
       </div>
       
