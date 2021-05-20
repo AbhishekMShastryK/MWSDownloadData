@@ -4,7 +4,6 @@
 .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 body {
@@ -27,6 +26,7 @@ body {
 
 .App p {
   font-size: 2em;
+  text-align: center;
   font-weight: 500;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
