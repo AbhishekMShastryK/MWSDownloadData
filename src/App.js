@@ -2,8 +2,27 @@ import {React,useEffect,useState} from 'react';
 import './App.css';
 import { CSVLink } from "react-csv";
 import moment from "moment";
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import SaveIcon from '@material-ui/icons/Save';
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    
+  },
+  button: {
+    fontSize:15,
+    fontWeight:'bold',
+    backgroundColor:'#000000',
+    
+  },
+}));
 
 function App() {
+  const classes = useStyles();
   const [data1, setData1] = useState([])
   const [data2, setData2] = useState([])
   const [dataAgg, setDataAgg] = useState([])
@@ -69,13 +88,13 @@ useEffect(() => {
   
 
   const headers = [
-    { label: "Time", key: "created_at" },
-    { label: "Temperature", key: "field1" },
-    { label: "Humidity", key: "field2" },
-    { label: "Pressure", key: "field3" },
-    { label: "Soil Moisture", key: "field4" },
+    { label: "Time (DD/MM/YY HH:MM:ss)", key: "created_at" },
+    { label: "Temperature (°c)", key: "field1" },
+    { label: "Humidity (%)", key: "field2" },
+    { label: "Pressure (hPa)", key: "field3" },
+    { label: "Soil Moisture (%)", key: "field4" },
     { label: "UV Index", key: "field5" },
-    { label: "AQI", key: "field6" },
+    { label: "AQI (ppm)", key: "field6" },
    
   ];
   // data1 = data1.map(row => ({...row, created_at: moment(row.created_at).format("YYYY-MM-DD")}))
@@ -84,13 +103,34 @@ useEffect(() => {
       <h1>Micro Weather Station</h1>
       <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
       <div className="data1">
-      <CSVLink data ={data1} headers={headers} filename = {'MWSNode1.csv'} >Download Node 1</CSVLink>
+      <CSVLink style={{ textDecoration: 'none' }} data ={data1} headers={headers} filename = {'MWSNode1.csv'}  >
+        <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        className={classes.button}
+        startIcon={<SaveIcon />}
+      >Node 1 Data</Button></CSVLink>
       </div>
       <div className="data2">
-      <CSVLink data ={data2} headers={headers} filename = {'MWSNode2.csv'} >Download Node 2</CSVLink>
+      <CSVLink style={{ textDecoration: 'none' }} data ={data2} headers={headers} filename = {'MWSNode2.csv'} >
+        <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        className={classes.button}
+        startIcon={<SaveIcon />}
+      >Node 2 Data</Button></CSVLink>
       </div>
       <div className="dataAgg">
-      <CSVLink data ={dataAgg} headers={headers} filename = {'MWSNodeAgg.csv'} >Download Node Aggregate</CSVLink>
+      <CSVLink style={{ textDecoration: 'none' }} data ={dataAgg} headers={headers} filename = {'MWSNodeAgg.csv'} >
+        <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        className={classes.button}
+        startIcon={<SaveIcon />}
+      >Aggregate Data</Button></CSVLink>
       </div>
       
     </div>
