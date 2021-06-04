@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
-    fontSize:15,
+    fontSize:25,
     fontWeight:'bold',
     backgroundColor:'#000000',
     
@@ -107,10 +107,10 @@ useEffect(() => {
       <div className="data1">
       <CSVLink style={{ textDecoration: 'none' }} data ={data1} headers={headers} filename = {'MWSNode1.csv'}  >
         <Button
-        style={{maxWidth: '200px', maxHeight: '50px', minWidth: '200px', minHeight: '50px'}}
+        // style={{maxWidth: '200px', maxHeight: '50px', minWidth: '200px', minHeight: '50px'}}
         variant="contained"
         color="primary"
-        size="large"
+       
         className={classes.button}
         startIcon={<SaveIcon />}
       >Node 1 Data</Button></CSVLink>
