@@ -14,6 +14,15 @@ const useStyles = makeStyles((theme) => ({
     
   },
   button: {
+    margin: theme.spacing(1),
+    [theme.breakpoints.down("sm")]: {
+      minWidth: 32,
+      paddingLeft: 8,
+      paddingRight: 8,
+      "& .MuiButton-startIcon": {
+        margin: 0
+      }
+    },
     fontSize:15,
     fontWeight:'bold',
     backgroundColor:'#000000',
