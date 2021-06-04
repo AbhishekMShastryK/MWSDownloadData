@@ -5,7 +5,6 @@ import moment from "moment";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import SaveIcon from '@material-ui/icons/Save';
-import Container from '@material-ui/core/Container';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -100,7 +99,7 @@ useEffect(() => {
   ];
   // data1 = data1.map(row => ({...row, created_at: moment(row.created_at).format("YYYY-MM-DD")}))
   return (
-    <Container maxWidth="sm">
+
     <div className="App">
       <h1>Micro Weather Station</h1>
       <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
@@ -136,7 +135,6 @@ useEffect(() => {
       </div>
       
     </div>
-    </Container>
   );
 }
 
