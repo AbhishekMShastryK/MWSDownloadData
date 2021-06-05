@@ -119,7 +119,7 @@ useEffect(() => {
     
       <Grid container className={classes.root1} spacing={2}>
       <Grid item xs={12}>
-        <Grid container justify="center" spacing={2}>
+        <Grid container justify="center" spacing={5}>
           
             <Grid key={0} item>
               <CSVLink style={{ textDecoration: 'none' }} data ={data1} headers={headers} filename = {'MWSNode1.csv'}  >
