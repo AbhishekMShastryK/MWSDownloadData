@@ -116,7 +116,7 @@ useEffect(() => {
     <div className="App">
       <h1>Micro Weather Station</h1>
       
-      <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
+      <p>The below link are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
     
       <Grid container className={classes.root1} spacing={2}>
       <Grid item xs={12}>
