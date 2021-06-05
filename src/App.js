@@ -46,7 +46,7 @@ function App() {
             .then(response => response.json())
             .then(data => {
               // console.log(data.feeds)
-              setData1(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:MM:ss")})))
+              setData1(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
             
             })
             .catch((err) => {
@@ -63,7 +63,7 @@ function App() {
           .then(response => response.json())
           .then(data => {
             // console.log(data.feeds)
-            setData2(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:MM:ss")})))
+            setData2(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
           
           })
           .catch((err) => {
@@ -80,7 +80,7 @@ useEffect(() => {
         .then(response => response.json())
         .then(data => {
           // console.log(data.feeds)
-          setDataAgg(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:MM:ss")})))
+          setDataAgg(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
         
         })
         .catch((err) => {
@@ -99,7 +99,7 @@ useEffect(() => {
   
 
   const headers = [
-    { label: "Time (DD/MM/YY HH:MM:ss)", key: "created_at" },
+    { label: "Time (DD/MM/YY HH:mm:ss)", key: "created_at" },
     { label: "Temperature (°c)", key: "field1" },
     { label: "Humidity (%)", key: "field2" },
     { label: "Pressure (hPa)", key: "field3" },
