@@ -32,6 +32,7 @@ body {
   padding: 15px;
   background-color: #DC654B;
   color: #111111;
+  border-radius: 10px;
 }
 .data1 {
   font-size: large;
@@ -51,9 +52,3 @@ body {
   
 }
 
-@media (max-width: 100px) {
-  .App {
-    
-    flex-direction: column;
-  }
-}
