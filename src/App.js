@@ -5,6 +5,8 @@ import moment from "moment";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import SaveIcon from '@material-ui/icons/Save';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,11 +15,21 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     
   },
+  root1: {
+    flexGrow: 1,
+    display:'flex',
+    flexDirection:'column'
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
   button: {
     margin: theme.spacing(1),
-    fontSize:35,
+    fontSize:20,
     fontWeight:'bold',
     backgroundColor:'#000000',
+    
     
   },
 }));
@@ -103,20 +115,26 @@ useEffect(() => {
 
     <div className="App">
       <h1>Micro Weather Station</h1>
+      
       <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
-      <div className="data1">
-      <CSVLink style={{ textDecoration: 'none' }} data ={data1} headers={headers} filename = {'MWSNode1.csv'}  >
+    
+      <Grid container className={classes.root1} spacing={2}>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={2}>
+          
+            <Grid key={0} item>
+              <CSVLink style={{ textDecoration: 'none' }} data ={data1} headers={headers} filename = {'MWSNode1.csv'}  >
         <Button
         // style={{maxWidth: '200px', maxHeight: '50px', minWidth: '200px', minHeight: '50px'}}
         variant="contained"
         color="primary"
-       
+        size="large"
         className={classes.button}
         startIcon={<SaveIcon />}
       >Node 1 Data</Button></CSVLink>
-      </div>
-      <div className="data2">
-      <CSVLink style={{ textDecoration: 'none' }} data ={data2} headers={headers} filename = {'MWSNode2.csv'} >
+            </Grid>
+            <Grid key={1} item>
+            <CSVLink style={{ textDecoration: 'none' }} data ={data2} headers={headers} filename = {'MWSNode2.csv'} >
         <Button
         variant="contained"
         color="primary"
@@ -124,9 +142,9 @@ useEffect(() => {
         className={classes.button}
         startIcon={<SaveIcon />}
       >Node 2 Data</Button></CSVLink>
-      </div>
-      <div className="dataAgg">
-      <CSVLink style={{ textDecoration: 'none' }} data ={dataAgg} headers={headers} filename = {'MWSNodeAgg.csv'} >
+            </Grid>
+            <Grid key={2} item>
+            <CSVLink style={{ textDecoration: 'none' }} data ={dataAgg} headers={headers} filename = {'MWSAgg.csv'} >
         <Button
         variant="contained"
         color="primary"
@@ -134,7 +152,14 @@ useEffect(() => {
         className={classes.button}
         startIcon={<SaveIcon />}
       >Aggregate Data</Button></CSVLink>
-      </div>
+            </Grid>
+          
+        </Grid>
+      </Grid>
+      </Grid>
+      
+     
+      
       
     </div>
   );
