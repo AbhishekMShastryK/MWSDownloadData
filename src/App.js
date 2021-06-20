@@ -16,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
   },
   root1: {
     flexGrow: 1,
-    display:'flex',
-    flexDirection:'column'
   },
   paper: {
     height: 140,
@@ -45,7 +43,7 @@ function App() {
             fetch("https://api.thingspeak.com/channels/1384648/feeds.json?timezone=Asia/Kolkata&results=100000")
             .then(response => response.json())
             .then(data => {
-              // console.log(data.feeds)
+              console.log(data)
               setData1(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
             
             })
@@ -91,12 +89,11 @@ useEffect(() => {
   getDataAgg()
 },[])
 
-
-
     
 // console.log("This is CSV LIST 1",data1)
   
-  
+  const startDate = dataAgg[0].created_at
+  // console.log(startDate)
 
   const headers = [
     { label: "Time (DD/MM/YY HH:mm:ss)", key: "created_at" },
@@ -115,7 +112,7 @@ useEffect(() => {
       <h1>Micro Weather Station</h1>
       
       <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
-    
+      <p1>Data collected from {startDate} with {dataAgg.length} entries.</p1>
       <Grid container className={classes.root1} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={5} flexDirection="column">
