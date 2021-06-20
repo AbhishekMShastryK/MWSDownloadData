@@ -35,7 +35,7 @@ function App() {
   const [data1, setData1] = useState([])
   const [data2, setData2] = useState([])
   const [dataAgg, setDataAgg] = useState([])
-  const [startDate, setStartDate] = useState(null)
+  const [startDate, setStartDate] = useState(0)
 
   
 
