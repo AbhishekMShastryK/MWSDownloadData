@@ -35,6 +35,7 @@ function App() {
   const [data1, setData1] = useState([])
   const [data2, setData2] = useState([])
   const [dataAgg, setDataAgg] = useState([])
+  const [startDate, setStartDate] = useState(null)
 
   
 
@@ -77,10 +78,11 @@ useEffect(() => {
         fetch("https://api.thingspeak.com/channels/1384648/feeds.json?timezone=Asia/Kolkata&results=100000")
         .then(response => response.json())
         .then(data => {
-          // console.log(data.feeds)
           setDataAgg(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
-        
+          setStartDate(moment(data.feeds[0].created_at).format("DD/MM/YYYY HH:mm:ss"))
+
         })
+
         .catch((err) => {
           console.log(err)
         }
@@ -90,11 +92,6 @@ useEffect(() => {
 },[])
 
     
-// console.log("This is CSV LIST 1",data1)
-  
-  const startDate = dataAgg[0].created_at
-  // console.log(startDate)
-
   const headers = [
     { label: "Time (DD/MM/YY HH:mm:ss)", key: "created_at" },
     { label: "Temperature (°c)", key: "field1" },
