@@ -116,6 +116,7 @@ useEffect(() => {
       <div className="para2">
       <p>Data collected from {startDate} with a total of {dataAgg.length} entries.</p>
       </div>
+      <div className="gridView">
       <Grid container className={classes.root1} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={5} >
@@ -155,6 +156,7 @@ useEffect(() => {
         </Grid>
       </Grid>
       </Grid>
+      </div>
       <div className="nodeLocation">
         <p>MWS Node Location</p>
       </div>
