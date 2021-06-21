@@ -11,7 +11,7 @@ function Map({coord1,coord2} ) {
   
     return (
         <div className="map">
-            <MapContainer center={coord1 } zoom={10}>
+            <MapContainer center={coord1 } zoom={12}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors" />
