@@ -156,7 +156,7 @@ useEffect(() => {
       </Grid>
       </Grid>
       <div className="nodeLocation">
-        <p>Node Location</p>
+        <p>MWS Node Location</p>
       </div>
       <div>
       <Map coord1={coord1} coord2={coord2}/>

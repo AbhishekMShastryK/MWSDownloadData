@@ -52,12 +52,15 @@ body {
   text-align: center;
   font-weight: 900;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-bottom: 0.3em;
   padding: 10px;
   background-color: #9A9EDF;
   color: #111111;
   border-radius: 10px;
 }
 
-
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
+}
 
