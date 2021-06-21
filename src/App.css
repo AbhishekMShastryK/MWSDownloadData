@@ -58,9 +58,5 @@ body {
   border-radius: 10px;
 }
 
-@media (max-width: 990px) {
-  .app {
-    flex-direction: column;
-  }
-}
+
 
