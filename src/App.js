@@ -6,7 +6,8 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import SaveIcon from '@material-ui/icons/Save';
 import Grid from '@material-ui/core/Grid';
-
+import Map from './Map';
+import "leaflet/dist/leaflet.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +37,8 @@ function App() {
   const [data2, setData2] = useState([])
   const [dataAgg, setDataAgg] = useState([])
   const [startDate, setStartDate] = useState(0)
-
+  const [coord1, setCoord1] = useState(["12.9141", "74.856"])
+  const [coord2, setCoord2] = useState(["12.9141", "74.856"])
   
 
   useEffect(() => {
@@ -45,6 +47,7 @@ function App() {
             .then(response => response.json())
             .then(data => {
               console.log(data)
+              setCoord1([data.channel.latitude,data.channel.longitude])
               setData1(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
             
             })
@@ -62,6 +65,7 @@ function App() {
           .then(response => response.json())
           .then(data => {
             // console.log(data.feeds)
+            setCoord2([data.channel.latitude,data.channel.longitude])
             setData2(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
           
           })
@@ -102,17 +106,19 @@ useEffect(() => {
     { label: "AQI (ppm)", key: "field6" },
    
   ];
-  // data1 = data1.map(row => ({...row, created_at: moment(row.created_at).format("YYYY-MM-DD")}))
   return (
 
     <div className="App">
       <h1>Micro Weather Station</h1>
-      
+      <div className="para1">
       <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
-      <p1>Data collected from {startDate} with {dataAgg.length} entries.</p1>
+      </div>
+      <div className="para2">
+      <p>Data collected from {startDate} with a total of {dataAgg.length} entries.</p>
+      </div>
       <Grid container className={classes.root1} spacing={2}>
       <Grid item xs={12}>
-        <Grid container justify="center" spacing={5} flexDirection="column">
+        <Grid container justify="center" spacing={5} >
           
             <Grid key={0} item>
               <CSVLink style={{ textDecoration: 'none' }} data ={data1} headers={headers} filename = {'MWSNode1.csv'}  >
@@ -149,9 +155,13 @@ useEffect(() => {
         </Grid>
       </Grid>
       </Grid>
-      
+      <div className="nodeLocation">
+        <p>Node Location</p>
+      </div>
+      <div>
+      <Map coord1={coord1} coord2={coord2}/>
      
-      
+      </div>
       
     </div>
   );

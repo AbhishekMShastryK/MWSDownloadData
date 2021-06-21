@@ -23,7 +23,7 @@ body {
   margin-bottom: 1.5em;
 }
 
-.App p {
+.para1 {
   font-size: 1.5em;
   text-align: center;
   font-weight: 500;
@@ -35,7 +35,7 @@ body {
   border-radius: 10px;
 }
 
-.App p1 {
+.para2 {
   font-size: 1.5em;
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -46,21 +46,18 @@ body {
   border-radius: 10px;
 }
 
-.data1 {
-  font-size: large;
+.nodeLocation {
+  font-size: 1.5em;
+  margin-top: 7em;
   text-align: center;
-  margin-bottom: 2em;
-  
+  font-weight: 900;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 0.3em;
+  padding: 10px;
+  background-color: #9A9EDF;
+  color: #111111;
+  border-radius: 10px;
 }
-.data2 {
-  text-align: center;
-  font-size: large;
-  margin-bottom: 2em;
-  
-}
-.dataAgg {
-  text-align: center;
-  font-size: large;
-  
-}
+
+
 
