@@ -49,7 +49,7 @@ function App() {
               console.log(data)
               setCoord1([data.channel.latitude,data.channel.longitude])
               setData1(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
-            
+              
             })
             .catch((err) => {
               console.log(err)
@@ -64,7 +64,6 @@ function App() {
           fetch("https://api.thingspeak.com/channels/1384648/feeds.json?timezone=Asia/Kolkata&results=100000")
           .then(response => response.json())
           .then(data => {
-            // console.log(data.feeds)
             setCoord2([data.channel.latitude,data.channel.longitude])
             setData2(data.feeds.map(row => ({...row, created_at: moment(row.created_at).format("DD/MM/YYYY HH:mm:ss")})))
           
@@ -124,7 +123,6 @@ useEffect(() => {
             <Grid key={0} item>
               <CSVLink style={{ textDecoration: 'none' }} data ={data1} headers={headers} filename = {'MWSNode1.csv'}  >
         <Button
-        // style={{maxWidth: '200px', maxHeight: '50px', minWidth: '200px', minHeight: '50px'}}
         variant="contained"
         color="primary"
         size="large"
@@ -152,7 +150,6 @@ useEffect(() => {
         startIcon={<SaveIcon />}
       >Aggregate Data</Button></CSVLink>
             </Grid>
-          
         </Grid>
       </Grid>
       </Grid>
