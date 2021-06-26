@@ -18,10 +18,6 @@ const useStyles = makeStyles((theme) => ({
   root1: {
     flexGrow: 1,
   },
-  paper: {
-    height: 140,
-    width: 100,
-  },
   button: {
     margin: theme.spacing(1),
     fontSize:15,
