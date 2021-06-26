@@ -1,5 +1,5 @@
 .map {
-    height: 800px;
+    height: 500px;
     background: #222222;
     padding: 1rem;
     border-radius: 20px;
@@ -13,9 +13,10 @@
   .para3 {
       text-align: center;
       font-weight: 900;
+      font-size: 12px;
   }
   .map b {
-    font-size: 21px;
+    font-size: 18px;
     color: #920707;
   }
   .marker-cluster-small{background-color:#cccccc}.marker-cluster-small div{background-color:#222222}

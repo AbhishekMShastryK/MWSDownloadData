@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
-    fontSize:25,
+    fontSize:15,
     fontWeight:'bold',
     backgroundColor:'#111111',
     
@@ -110,7 +110,7 @@ useEffect(() => {
     <div className="App">
       <h1>Micro Weather Station</h1>
       <div className="para1">
-      <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p><br />
+      <p>The below links are the data from Micro Weather Station Node 1, Node 2 and aggregate of both the nodes.</p>
       </div>
       <div className="para2">
       <p>Data collected from {startDate} with a total of {dataAgg.length} entries.</p>
