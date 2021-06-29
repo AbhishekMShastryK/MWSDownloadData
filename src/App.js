@@ -99,6 +99,8 @@ useEffect(() => {
     { label: "Soil Moisture (%)", key: "field4" },
     { label: "UV Index", key: "field5" },
     { label: "AQI (ppm)", key: "field6" },
+    { label: "Heat Index (°c)", key: "field7" },
+    { label: "Dew Point (°c)", key: "field8" }
    
   ];
   return (
