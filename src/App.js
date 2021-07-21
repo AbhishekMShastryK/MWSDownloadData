@@ -33,8 +33,8 @@ function App() {
   const [data2, setData2] = useState([])
   const [dataAgg, setDataAgg] = useState([])
   const [startDate, setStartDate] = useState(0)
-  const [coord1, setCoord1] = useState(["12.9141", "74.856"])
-  const [coord2, setCoord2] = useState(["12.9141", "74.856"])
+  const [coord1, setCoord1] = useState(["13.0688", "74.9936"])
+  const [coord2, setCoord2] = useState(["13.0688", "74.9936"])
   
 
   useEffect(() => {
